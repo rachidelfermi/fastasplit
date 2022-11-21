@@ -5,6 +5,7 @@
 #contact rachid.elfermi@gmail.com
 # version 1.0
 # usage python3 split_fasta_by_chromo_size.py inputfile  output_path approximated_number_of_file
+import os,sys
 sequencescoton = {}
 countercoton=[]
 count=0
@@ -14,7 +15,7 @@ jj=0
 descr = None
 plant=sys.argv[1]
 out_path=sys.argv[2]
-number_of_files=sys.argv[3]
+number_of_files=int(sys.argv[3])
 size=int(os.stat(plant).st_size/number_of_files)
 with open(plant,"r") as file:
     line = file.readline()[:-1] # always trim newline
